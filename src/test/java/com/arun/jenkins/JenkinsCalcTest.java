@@ -18,4 +18,10 @@ public class JenkinsCalcTest {
         assertEquals(5, myCalc.subNum(8,3));
         assertNotEquals(5, myCalc.subNum(0,0));
     }
+
+    @org.junit.Test
+    public void divNum(){
+        JenkinsCalc myCalc = new JenkinsCalc();
+        assertEquals(5,myCalc.divNum(10,2));
+    }
 }

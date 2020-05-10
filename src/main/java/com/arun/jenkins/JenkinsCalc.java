@@ -7,5 +7,9 @@ public class JenkinsCalc {
     public int subNum(int a, int b){
         return a-b;
         }
+
+        public int divNum(int a, int b){
+        return a/b;
+        }
 }
 
