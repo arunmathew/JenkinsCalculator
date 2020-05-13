@@ -23,5 +23,10 @@ pipeline{
                 archiveArtifacts 'target/*.jar'
             }
         }
+        stage('Email Status'){
+            steps{
+                mail body:"$(env.JOB_NAME) - $(env.BUILD_NUMBER) : [${currentBuild.currentResult}]\n\nThe Console Output is at ${env.BUILD_URL}", to:"arunmathew1712@gmail.com"
+            }
+        }
     }
 }
