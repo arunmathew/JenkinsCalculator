@@ -1,0 +1,15 @@
+pipeline{
+    agent any
+    stages{
+        stage('Preparation'){
+            git 'https://github.com/arunmathew/JenkinsCalculator.git'
+            bat 'mvn clean'
+        }
+        stage('Test'){
+            bat 'mvn test'
+        }
+        stage('Package'){
+            bat 'mvn package'
+        }
+    }
+}
