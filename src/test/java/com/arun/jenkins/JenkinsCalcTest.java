@@ -12,12 +12,12 @@ public class JenkinsCalcTest {
 
     }
 
-/*    @org.junit.Test
+    @org.junit.Test
     public void subNum() {
         JenkinsCalc myCalc = new JenkinsCalc();
         assertEquals(5, myCalc.subNum(8, 3));
         assertNotEquals(5, myCalc.subNum(0, 0));
-    }*/
+    }
 
     @org.junit.Test
     public void divNum() {
