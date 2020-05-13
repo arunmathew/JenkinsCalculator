@@ -3,17 +3,24 @@ pipeline{
     stages{
         stage('Preparation'){
             steps{
-            bat 'mvn clean'
+                bat 'mvn clean'
             }
         }
         stage('Test'){
-        steps{
-            bat 'mvn test'
+            steps{
+                bat 'mvn test'
             }
         }
         stage('Package'){
-        steps{
-            bat 'mvn package'
+            steps{
+                bat 'mvn package'
+            }
+        }
+        stage('Caputre Results'){
+            steps{
+                input('Do you want to capture results?')
+                junit '**/target/surefire-reports/TEST-*.xml'
+                archiveArtifact 'target/*.jar'
             }
         }
     }
