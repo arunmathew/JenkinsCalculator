@@ -25,7 +25,7 @@ pipeline{
         }
         stage('Email Status'){
             steps{
-                mail body:"${env.JOB_NAME} - Build #${env.BUILD_NUMBER} : [${currentBuild.currentResult}]\n\nThe Console Output is at ${env.BUILD_URL}",to:'arunmathew1712@gmail.com'
+                mail body: '${env.JOB_NAME}', subject: 'Jenkins Job Information', to: 'arunmathew1712@gmail.com'
             }
         }
     }
